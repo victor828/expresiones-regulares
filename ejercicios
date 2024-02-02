@@ -1,0 +1,57 @@
+
+
+const regexWords = /^\w+\s?\w+?\s?$/gim;
+/* buscara 1 letra o mas al principio despues un espacio opcional
+ desoues una letra o mas opcional
+ cerramos con espacio opcional*/
+
+`/^\d{3}[\s-.]\d+[\s-.]\d+[\s-.]\d+/gim`;
+/* inicio con 3 digitos seguido de un espacio, guion o punto
+despues 1 o mas digitos seguido de un espacio, guion o punto
+despues 1 o mas digitos seguido de un espacio, guion o punto
+despues 1 o mas digitos */
+
+`^\d{3}[\s-.]\d{3}[\s-.]\d{2}[\s-.]\d{2}`;
+/* iniciamos con 3 digitos seguido de un espacio, guion o punto
+despues 3 digitos seguido de un espacio, guion o punto
+despues 2 digitos seguido de un espacio, guion o punto
+despues 2 digitos */
+
+`[a-zA-Z]`;
+/* busca todas las palabras que esten entre a y z 
+mayusculas o minusculas*/
+
+const regexNum = /(449|448)[\s-.]\w{3}([\s-.]\w{2}){2}/gim;
+const regexNum2 = /\d{3}[\s-.]\w{3}([\s-.]\w{2}){2}/gim;
+const regMail = /[a-zA-Z0-9]+[\-._]?@[a-zA-Z0-9]+\.[a-z]+/gm;
+const regWeb = /^(hhtp:\/\/|https:\/\/)?(www\.)?[a-zA-Z0-9.-]+\.[a-z]+/gm;
+
+const texto = `Arturo	
+449 123 45 67
+carlos_@hotmail.com
+www.carlos.com
+
+Manuel Alejandro
+448-234-56-78
+alejandro@outlook.com
+https://www.manuel.alejandro.com.mx
+http://alejandro.com.mx
+
+Cesar Alan
+449 345 67 89
+cesar@hotmail.com
+cesar.net
+
+123.345.67.89
+
+4493456789
+
+ant ant .... a nt`;
+
+texto.match(regexWords);
+
+console.log(texto.match(regexWords));
+console.log(texto.match(regexNum));
+console.log(texto.match(regexNum2));
+console.log(texto.match(regMail));
+console.log(texto.match(regWeb));
